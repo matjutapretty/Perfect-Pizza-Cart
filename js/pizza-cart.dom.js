@@ -29,19 +29,18 @@ const payBtn = document.querySelector(".payBtn");
 const pizzaCart = PizzaCart();
 
 function BtnClicked(event) {
-   pizzaCart.BtnClicked(event.target.dataset);
+   pizzaCart.BtnClicked(event.target.dataset.type);
 
-   smallPizzaQty.innerHTML = pizzaCart.qtyUpdate().smallPizzaQty;
-   medPizzaQty.innerHTML = pizzaCart.qtyUpdate().medPizzaQty;
-   largePizzaQty.innerHTML = pizzaCart.qtyUpdate().largePizzaQty;
-   totalCart = smallPizzaQty * 49.00 + medPizzaQty * 89.00 + largePizzaQty * 129.00;
+   smallPizzaQty.innerHTML = pizzaCart.qtyUpdate().smallQty;
+   medPizzaQty.innerHTML = pizzaCart.qtyUpdate().medQty;
+   largePizzaQty.innerHTML = pizzaCart.qtyUpdate().largeQty;
 
-    smallPizzaTotal.innerHTML = pizzaCart.priceUpdate().smallPizzaCost;
-    medPizzaTotal.innerHTML = pizzaCart.priceUpdate().medPizzaCost;
-    largePizzaTotal.innerHTML = pizzaCart.priceUpdate().largePizzaCost;
+    smallPizzaTotal.innerHTML = pizzaCart.priceUpdate().smallCost;
+    medPizzaTotal.innerHTML = pizzaCart.priceUpdate().medCost;
+    largePizzaTotal.innerHTML = pizzaCart.priceUpdate().largeCost;
     cartTotal.innerHTML = pizzaCart.priceUpdate().totalCart;
 
-    if (totalCart > 0) {
+    if (pizzaCart.priceUpdate().totalCart > 0) {
         checkOut.classList.remove('hidden');
     } else {
         checkOut.classList.add('hidden');
@@ -59,20 +58,21 @@ function payment(){
     var paymentAmt = Number(payAmt.value);
  if (paymentAmt == pizzaCart.priceUpdate().totalCart){
     message.innerHTML = "Enjoy your Pizza!";
-    checkOut.classList.remove('hidden');
     pizzaCart.resetCart();
-    smallPizzaQty = 0;
-    medPizzaQty = 0;
-    largePizzaQty = 0;
-    totalCart = 0;
+    checkOut.classList.remove('hidden');
+    
+   // smallPizzaQty = 0;
+   // medPizzaQty = 0;
+   // largePizzaQty = 0;
+   // totalCart = 0;
 
-    smallPizzaQty.innerHTML = pizzaCart.priceUpdate().resetCart().smallPizzaQty;
-    medPizzaQty.innerHTML = pizzaCart.priceUpdate().resetCart().medPizzaQty;
-    largePizzaQty.innerHTML = pizzaCart.priceUpdate().resetCart().largePizzaQty;
+    smallPizzaQty.innerHTML = pizzaCart.resetCart().smallQty;
+    medPizzaQty.innerHTML = pizzaCart.resetCart().medQty;
+    largePizzaQty.innerHTML = pizzaCart.resetCart().largeQty;
 
-    smallPizzaTotal.innerHTML = pizzaCart.resetCart().smallPizzaCost;
-    medPizzaTotal.innerHTML = pizzaCart.resetCart().medPizzaCost;
-    largePizzaTotal.innerHTML = pizzaCart.resetCart().largePizzaCost;
+    smallPizzaTotal.innerHTML = pizzaCart.resetCart().smallCost;
+    medPizzaTotal.innerHTML = pizzaCart.resetCart().medCost;
+    largePizzaTotal.innerHTML = pizzaCart.resetCart().largeCost;
     cartTotal.innerHTML = pizzaCart.resetCart().totalCart;
 
     setTimeout(function () {
@@ -83,22 +83,18 @@ function payment(){
     }, 2500);
 
  } else if (paymentAmt > pizzaCart.priceUpdate().totalCart) {
-    var change = paymentAmt - totalCart;
-    message.innerHTML = "Enjoy your Pizza, here is your change R" + change.toFixed(2);
-    checkOut.classList.remove('hidden');
+    //var change = paymentAmt - totalCart;
+    message.innerHTML = "Enjoy your Pizza, here is your change R" + pizzaCart.change(paymentAmt);
     pizzaCart.resetCart();
-    smallPizzaQty = 0;
-    medPizzaQty = 0;
-    largePizzaQty = 0;
-    totalCart = 0;
+    checkOut.classList.toggle('hidden');
 
-    smallPizzaQty.innerHTML = pizzaCart.priceUpdate().resetCart().smallPizzaQty;
-    medPizzaQty.innerHTML = pizzaCart.priceUpdate().resetCart().medPizzaQty;
-    largePizzaQty.innerHTML = pizzaCart.priceUpdate().resetCart().largePizzaQty;
+    smallPizzaQty.innerHTML = pizzaCart.resetCart().smallQty;
+    medPizzaQty.innerHTML = pizzaCart.resetCart().medQty;
+    largePizzaQty.innerHTML = pizzaCart.resetCart().largeQty;
 
-    smallPizzaTotal.innerHTML = pizzaCart.resetCart().smallPizzaCost;
-    medPizzaTotal.innerHTML = pizzaCart.resetCart().medPizzaCost;
-    largePizzaTotal.innerHTML = pizzaCart.resetCart().largePizzaCost;
+    smallPizzaTotal.innerHTML = pizzaCart.resetCart().smallCost;
+    medPizzaTotal.innerHTML = pizzaCart.resetCart().medCost;
+    largePizzaTotal.innerHTML = pizzaCart.resetCart().largeCost;
     cartTotal.innerHTML = pizzaCart.resetCart().totalCart;
 
     setTimeout(function () {

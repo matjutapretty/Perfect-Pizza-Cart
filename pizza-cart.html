@@ -14,11 +14,11 @@
             <td class="product">
                 <h3 class="product">Small Pizza</h3>
             </td>
-            <td><button class="addBtn small" id="test" on type="button" name="add">+</button></td>
+            <td><button class="addBtn small" data-type="smallAdd" id="test" on type="button">+</button></td>
             <td>
                 <h3 class="smallPizzaQty product">0</h3>
             </td>
-            <td><button class="minusBtn small" on type="button" name="subtract">-</button></td>
+            <td><button class="minusBtn small" data-type="smallMinus" on type="button">-</button></td>
             <td>
                 <h3 class="product">R<span class="smallPizzaTotal">0.00</span>
             </td>
@@ -28,11 +28,11 @@
             <td class="product">
                 <h3 class="product">Medium Pizza</h3>
             </td>
-            <td><button class="addBtn med" on type="button" name="add">+</button></td>
+            <td><button class="addBtn med" data-type="medAdd" on type="button">+</button></td>
             <td>
                 <h3 class="medPizzaQty product">0</h3>
             </td>
-            <td><button class="minusBtn med" on type="button" name="subtract">-</button></td>
+            <td><button class="minusBtn med" data-type="medMinus" on type="button">-</button></td>
             <td>
                 <h3 class="product">R<span class="medPizzaTotal">0.00</span>
             </td>
@@ -42,11 +42,11 @@
             <td>
                 <h3 class="product">Large Pizza</h3>
             </td>
-            <td><button class="addBtn large" on type="button" name="add">+</button></td>
+            <td><button class="addBtn large" data-type="largeAdd" on type="button">+</button></td>
             <td>
                 <h3 class="largePizzaQty product">0</h3>
             </td>
-            <td><button class="minusBtn large" on type="button" name="subtract">-</button></td>
+            <td><button class="minusBtn large" data-type="largeMinus" on type="button">-</button></td>
             <td>
                 <h3 class="product">R<span class="largePizzaTotal">0.00</span>
             </td>
@@ -87,9 +87,9 @@
         </table>
     </div>
 
-    <button class="addBtn small buy" on type="button" name="add">Buy</button>
-    <button class="addBtn med buy" on type="button" name="add">Buy</button>
-    <button class="addBtn large buy" on type="button" name="add">Buy</button> 
+    <button class="addBtn small buy" data-type="smallAdd" on type="button">Buy</button>
+    <button class="addBtn med buy" data-type="medAdd" on type="button">Buy</button>
+    <button class="addBtn large buy" data-type="largeAdd" on type="button">Buy</button> 
 <!--
     <div class="pizza">
         <button class="addBtn small buy" on type="button" name="add">Buy</button>
