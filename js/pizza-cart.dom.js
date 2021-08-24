@@ -29,7 +29,7 @@ const payBtn = document.querySelector(".payBtn");
 const pizzaCart = PizzaCart();
 
 function BtnClicked(event) {
-   pizzaCart.BtnClicked(event.target.dataset.type);
+   pizzaCart.BtnClicked(event.target.dataset.size);
 
    smallPizzaQty.innerHTML = pizzaCart.qtyUpdate().smallQty;
    medPizzaQty.innerHTML = pizzaCart.qtyUpdate().medQty;
