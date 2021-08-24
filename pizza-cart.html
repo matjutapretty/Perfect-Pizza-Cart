@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/cart.css">
+</head>
+<body>
+    
+    <table class="cartTable">
+        <tr>
+            <td class="product">
+                <h3 class="product">Small Pizza</h3>
+            </td>
+            <td><button class="addBtn small" id="test" on type="button" name="add">+</button></td>
+            <td>
+                <h3 class="smallPizzaQty product">0</h3>
+            </td>
+            <td><button class="minusBtn small" on type="button" name="subtract">-</button></td>
+            <td>
+                <h3 class="product">R<span class="smallPizzaTotal">0.00</span>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="product">
+                <h3 class="product">Medium Pizza</h3>
+            </td>
+            <td><button class="addBtn med" on type="button" name="add">+</button></td>
+            <td>
+                <h3 class="medPizzaQty product">0</h3>
+            </td>
+            <td><button class="minusBtn med" on type="button" name="subtract">-</button></td>
+            <td>
+                <h3 class="product">R<span class="medPizzaTotal">0.00</span>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <h3 class="product">Large Pizza</h3>
+            </td>
+            <td><button class="addBtn large" on type="button" name="add">+</button></td>
+            <td>
+                <h3 class="largePizzaQty product">0</h3>
+            </td>
+            <td><button class="minusBtn large" on type="button" name="subtract">-</button></td>
+            <td>
+                <h3 class="product">R<span class="largePizzaTotal">0.00</span>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="4">
+                <h3 class="product">Total Cost</h3>
+            </td>
+            <td>
+                <h3 class="product">R<span class="cartTotal">0.00</span></h3>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="5">
+                <button class="checkOut hidden" on type="button" name="checkOut">Check Out</button>
+            </td>
+        </tr>
+    </table>
+
+    <div class="payOut hidden">
+        <table class="cartTable">
+            <tr>
+                <h3 class="hidden product message">Message</h3>
+            </tr>
+            <tr>
+                <td>
+                    <h3>Payment Amount:</h3>
+                </td>
+                <td class="pAmt">R<input class="payAmt" type="number"></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button class="payBtn" on type="button" name="pay">Pay</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <button class="addBtn small buy" on type="button" name="add">Buy</button>
+    <button class="addBtn med buy" on type="button" name="add">Buy</button>
+    <button class="addBtn large buy" on type="button" name="add">Buy</button> 
+<!--
+    <div class="pizza">
+        <button class="addBtn small buy" on type="button" name="add">Buy</button>
+        <button class="addBtn med buy" on type="button" name="add">Buy</button>
+        <button class="addBtn large buy" on type="button" name="add">Buy</button>
+    </div>
+-->
+<script src="js/pizza-cart-factory-function.js"></script>
+<script src="js/pizza-cart.dom.js"></script>
+
+</body>
+</html>
